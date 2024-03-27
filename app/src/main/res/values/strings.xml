@@ -1,0 +1,128 @@
+<resources>
+    <string name="app_name">Book Finder</string>
+
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+
+    <string-array name="coutry_list">
+        <item> </item>
+        <item>বাংলাদেশ</item>
+        <item>ভারত</item>
+        <item>রাশিয়া</item>
+        <item>কানাডা</item>
+        <item>চীন</item>
+        <item>যুক্তরাষ্ট্র</item>
+        <item>মালয়েশিয়া</item>
+        <item>ইতালি</item>
+        <item>নেপাল</item>
+    </string-array>
+
+    <string-array name="city_list">
+        <item> </item>
+        <item>ঢাকা</item>
+        <item>চট্টগ্রাম</item>
+        <item>গাজীপুর</item>
+        <item>নারায়নগঞ্জ</item>
+        <item>খুলনা</item>
+        <item>সিলেট</item>
+        <item>রাজশাহী</item>
+        <item>ময়মনসিংহ</item>
+        <item>রংপুর</item>
+        <item>কুমিল্লা</item>
+        <item>বরিশাল</item>
+
+    </string-array>
+
+    <string-array name="area_list">
+        <item> </item>
+        <item>সাভার</item>
+        <item>বগুড়া</item>
+        <item>কুষ্টিয়া</item>
+        <item>ফেনী</item>
+        <item>যশোর</item>
+        <item>কেরানীগঞ্জ</item>
+        <item>কালিয়াকৈর</item>
+        <item>ব্রাহ্মণবাড়িয়া</item>
+        <item>সাতক্ষীরা</item>
+        <item>ঈশ্বরদী</item>
+        <item>ধামরাই</item>
+
+    </string-array>
+
+    <string name="aboutText">
+        Project Name : DIU Book Finder App
+        \n \n
+        Project Team ID: Fall19D191
+        \n
+        Project/Internship Type : Development Project
+
+        \n \n \n \n
+
+        SUPERVISORS INFORMATION :
+        \n \n
+        NUSRAT JAHAN
+        \n
+        Sr. Lecturer
+        \n
+        Department of Computer Science and Engineering
+        \n
+        Faculty of Science and Information Technology
+        \n
+        E-mail: nusratjahan.cse@diu.edu.bd
+
+        \n \n \n \n
+
+        TEAM MEMBERS INFORMATION :
+        \n \n
+        NAZMUS SAKIB
+        \n
+        VARSITY ID: 171-15-9370
+        \n
+        BATCH: 46
+        \n
+        DEPARTMENT: COMPUTER SCIENCE AND ENGINEERING
+        \n
+        CONTACT NUMBER: 01786847565
+        \n
+        EMAIL: nazmus15-9370@diu.edu.bd
+
+        \n \n \n
+
+        A.S.M JUBAYER
+        \n
+        VARSITY ID: 171-15-9089
+        \n
+        BATCH: 46
+        \n
+        DEPARTMENT: COMPUTER SCIENCE AND ENGINEERING
+        \n
+        CONTACT NUMBER: 01793989292
+        \n
+        EMAIL: jubayer15-8762@diu.edu.bd
+
+        \n \n \n \n
+
+        TOOLS WE USED :
+        \n
+        Android Studio.
+        \n
+        Java programming Language.
+        \n
+        Firebase Database.
+        \n
+    </string>
+    <string name="title_activity_update_user">UpdateUserActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

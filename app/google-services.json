@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "377121030670",
+    "firebase_url": "https://bookfinder-690c9.firebaseio.com",
+    "project_id": "bookfinder-690c9",
+    "storage_bucket": "bookfinder-690c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377121030670:android:62c7a5b168618f8737725f",
+        "android_client_info": {
+          "package_name": "com.abir.diubookfinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "377121030670-grug60j60ha8kavvtfsgm1vpi3vo9i1l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abir.diubookfinder",
+            "certificate_hash": "c11fa19c317caf7b9883091cc996d30760ce8f35"
+          }
+        },
+        {
+          "client_id": "377121030670-ct5s9nubhq4ths7qnd1v118369vabikd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-tY2LU3t8cFsd4LEdr0lVngVtD1EsQ-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "377121030670-ct5s9nubhq4ths7qnd1v118369vabikd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
