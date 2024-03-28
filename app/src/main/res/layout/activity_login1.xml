@@ -14,7 +14,7 @@
         android:layout_marginBottom="100dp"
         android:fontFamily="@font/moon_bold"
         android:gravity="center"
-        android:text="Log In"
+        android:text="@string/log_in"
         android:textColor="@color/colorAccent"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -25,8 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
         android:layout_marginTop="50dp"
-        android:hint="Username"
-        android:drawableLeft="@drawable/ic_person_black"
+        android:hint="@string/username"
+        android:drawableStart="@drawable/ic_person_black"
         android:drawablePadding="25dp"
         android:drawableTint="#B8B8B8"
         android:textColor="#E9E9E9"
@@ -38,7 +38,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="TextFields"
+        tools:targetApi="m"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/password"
@@ -48,17 +51,19 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="35dp"
         android:background="@drawable/border_line_white"
-        android:drawableLeft="@drawable/ic_lock_black"
+        android:drawableStart="@drawable/ic_lock_black"
         android:drawablePadding="25dp"
         android:drawableTint="#B8B8B8"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:padding="12dp"
         android:textColor="#E9E9E9"
         android:textColorHint="#B8B8B8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        tools:targetApi="m"
+        android:importantForAutofill="no" />
 
     <RadioGroup
         android:id="@+id/rg_main"
@@ -72,26 +77,28 @@
 
         <RadioButton
             android:id="@+id/rb_user"
-            android:text="USER"
+            android:text="@string/user"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:drawableTint="#B8B8B8"
             android:textColor="#E9E9E9"
             android:textColorHint="#B8B8B8"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/border_line_white"/>
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/border_line_white"
+            tools:targetApi="m" />
 
         <RadioButton
             android:id="@+id/rb_seller"
-            android:text="SELLER"
+            android:text="@string/seller"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:drawableTint="#B8B8B8"
             android:textColor="#E9E9E9"
             android:textColorHint="#B8B8B8"
-            android:background="@drawable/border_line_white"/>
+            android:background="@drawable/border_line_white"
+            tools:targetApi="m" />
     </RadioGroup>
 
     <Button
@@ -104,7 +111,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/button_style"
         android:fontFamily="@font/moon_regular"
-        android:text="Log in"
+        android:text="@string/log_in"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,7 +129,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/button_style"
         android:fontFamily="@font/moon_bold"
-        android:text="REGISTRATION"
+        android:text="@string/registration"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

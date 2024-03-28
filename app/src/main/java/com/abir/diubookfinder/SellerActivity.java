@@ -1,7 +1,6 @@
 package com.abir.diubookfinder;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -13,17 +12,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class SellerActivity extends AppCompatActivity {
 
-    LinearLayout btnAdd,btnprofile,btnorder,btnlist;
+    LinearLayout btnAdd, btnProfile, btnOrder, btnList;
     TextView tvName;
 
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
@@ -38,10 +35,10 @@ public class SellerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_seller);
 
 
-        btnprofile= findViewById(R.id.button0);
-        btnlist =  findViewById(R.id.button1);
+        btnProfile = findViewById(R.id.button0);
+        btnList =  findViewById(R.id.button1);
         btnAdd =  findViewById(R.id.button2);
-        btnorder =  findViewById(R.id.button3);
+        btnOrder =  findViewById(R.id.button3);
 
         mDatabase= firebaseDatabase.getReference("allbook");
         intent = getIntent();
@@ -49,13 +46,13 @@ public class SellerActivity extends AppCompatActivity {
         tvName.setText("Hello "+intent.getStringExtra("name"));
         sellerId = intent.getStringExtra("id");
 
-        btnprofile.setOnClickListener(new View.OnClickListener() {
+        btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SellerActivity.this, editBookActivity.class));
             }
         });
-        btnlist.setOnClickListener(new View.OnClickListener() {
+        btnList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SellerActivity.this, BooklistActivity.class).putExtra("sellerId", sellerId));
@@ -67,7 +64,7 @@ public class SellerActivity extends AppCompatActivity {
                 startActivity(new Intent(SellerActivity.this, addBookActivity.class).putExtra("sellerId", sellerId));
             }
         });
-        btnorder.setOnClickListener(new View.OnClickListener() {
+        btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SellerActivity.this, OrderActivity.class));

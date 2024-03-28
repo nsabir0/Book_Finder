@@ -55,14 +55,13 @@ public class UserActivity extends AppCompatActivity {
     Intent intent;
 
 
-    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
 
         init();
-        String id = intent.getStringExtra("id");
+//        String id = intent.getStringExtra("id");
         getValue();
         populateList();
 
@@ -114,15 +113,18 @@ public class UserActivity extends AppCompatActivity {
     private void init() {
 
         actionBar = getSupportActionBar();
-        actionBar.setTitle("User Activity");
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        if (actionBar != null) {
+            actionBar.setTitle("User Activity");
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
         searchBr=findViewById(R.id.search_bar);
         btnSearch = findViewById(R.id.btn_search);
         listView=findViewById(R.id.listV);
         mDatabase= firebaseDatabase.getReference("allbook");
         intent = getIntent();
         tvName = findViewById(R.id.text);
-        tvName.setText("Hello "+intent.getStringExtra("name"));
+        tvName.setText("Hello ");
+//        tvName.setText("Hello "+intent.getStringExtra("name"));
 
     }
 

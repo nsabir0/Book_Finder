@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Login1Activity extends AppCompatActivity implements View.OnClickListener{
 
-    EditText etuser, etpass;
+    EditText etUser, etPass;
     Button btnLogin,btnSignup;
     RadioGroup rgMain;
     RadioButton rbUser, rbSeller;
@@ -37,8 +37,8 @@ public class Login1Activity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login1);
 
-        etuser= findViewById(R.id.email);
-        etpass= findViewById(R.id.password);
+        etUser = findViewById(R.id.email);
+        etPass = findViewById(R.id.password);
         rgMain = findViewById(R.id.rg_main);
         rbUser = findViewById(R.id.rb_user);
         rbSeller = findViewById(R.id.rb_seller);
@@ -61,8 +61,8 @@ public class Login1Activity extends AppCompatActivity implements View.OnClickLis
             }
         });
 
-        etuser.setOnClickListener(this);
-        etpass.setOnClickListener(this);
+        etUser.setOnClickListener(this);
+        etPass.setOnClickListener(this);
         btnLogin.setOnClickListener(this);
         btnSignup.setOnClickListener(this);
     }
@@ -71,8 +71,8 @@ public class Login1Activity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         try {
             if(v.getId() == R.id.login){
-                String mail = etuser.getText().toString().trim();
-                String pass = etpass.getText().toString().trim();
+                String mail = etUser.getText().toString().trim();
+                String pass = etPass.getText().toString().trim();
 
                 if (mail.isEmpty() || pass.isEmpty() || role.isEmpty()) {
                     Toast.makeText(Login1Activity.this, "Please Enter Username and Password !!!", Toast.LENGTH_SHORT).show();
@@ -93,20 +93,25 @@ public class Login1Activity extends AppCompatActivity implements View.OnClickLis
 
     private void logIn(final String mail, final String pass, final String role) {
 
+        gotoNextScreen(role);
+
         if(role.equals("USER")){
+            Toast.makeText(Login1Activity.this, "Log In Successful.", Toast.LENGTH_SHORT).show();
             reference.child("USER").addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     int a = 0;
                     for( DataSnapshot data : dataSnapshot.getChildren()){
                         Model value = data.getValue(Model.class);
-                        if(value.getEmail().equals(mail) && value.getPassword().equals(pass)){
+                        if (value != null && value.getEmail().equals(mail) && value.getPassword().equals(pass)) {
                             a = 1;
                             sp.edit().putString("info", value.getId()).apply();
 
 
                             Toast.makeText(Login1Activity.this, "Log In Successful.", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), UserActivity.class).putExtra("id", value.getId()).putExtra("name", value.getName()));
+                            Intent intent =new Intent(getApplicationContext(), UserActivity.class).putExtra("id", value.getId()).putExtra("name", value.getName());
+                            startActivity(intent);
+
                             finish();
                         }
                     }
@@ -119,14 +124,15 @@ public class Login1Activity extends AppCompatActivity implements View.OnClickLis
 
                 }
             });
-        }if(role.equals("SELLER")){
+        }
+        if(role.equals("SELLER")){
             reference.child("SELLER").addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     int a = 0;
                     for( DataSnapshot data : dataSnapshot.getChildren()){
                         Model value = data.getValue(Model.class);
-                        if(value.getEmail().equals(mail) && value.getPassword().equals(pass)){
+                        if (value != null && value.getEmail().equals(mail) && value.getPassword().equals(pass)) {
                             a = 1;
 
                             Toast.makeText(Login1Activity.this, "Log In Successful.", Toast.LENGTH_SHORT).show();
@@ -146,5 +152,20 @@ public class Login1Activity extends AppCompatActivity implements View.OnClickLis
             });
         }
 
+    }
+
+    void gotoNextScreen(final String role){
+        if(role.equals("USER")){
+            Toast.makeText(Login1Activity.this, "Log In User.", Toast.LENGTH_SHORT).show();
+            Intent intent =new Intent(getApplicationContext(), UserActivity.class).putExtra("id", 1).putExtra("name", "User Abir");
+            startActivity(intent);
+            finish();
+        }
+        if(role.equals("SELLER")){
+            Toast.makeText(Login1Activity.this, "Log In to Seller.", Toast.LENGTH_SHORT).show();
+            Intent intent =new Intent(getApplicationContext(), SellerActivity.class).putExtra("id",1).putExtra("name", "Seller Abir");
+            startActivity(intent);
+            finish();
+        }
     }
 }
